@@ -28,20 +28,15 @@ import com.google.common.base.Strings;
 public class RomanSymbol {
 
 	int value;
-	private String symbol;
+	String symbol;
 	
 	RomanSymbol(int value, String symbol) {
 		this.value = value;
 		this.symbol = symbol;
 	}
 
-	public String maxRepetitionLessOrEqualTo(int val) {
+	public RomanSymbol repeatUntilGreaterOrEqualTo(int val) {
 		int numTimes = val / value;
-		return Strings.repeat(symbol, numTimes);
-	}
-
-	public int maxRepetitionValueLessOrEqualTo(int val) {
-		int numTimes = val / value;
-		return numTimes * value;
+		return new RomanSymbol(numTimes * value, Strings.repeat(symbol, numTimes));
 	}
 }

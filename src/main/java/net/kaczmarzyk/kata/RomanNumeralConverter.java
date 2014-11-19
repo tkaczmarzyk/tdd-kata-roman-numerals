@@ -42,8 +42,9 @@ public class RomanNumeralConverter {
 		StringBuilder result = new StringBuilder();
 		
 		for (RomanSymbol symbol : symbols) {
-			result.append(symbol.maxRepetitionLessOrEqualTo(val));
-			val -= symbol.maxRepetitionValueLessOrEqualTo(val);
+			RomanSymbol maxRepetition = symbol.repeatUntilGreaterOrEqualTo(val);
+			result.append(maxRepetition.symbol);
+			val -= maxRepetition.value;
 		}
 		
 		return result.toString();
