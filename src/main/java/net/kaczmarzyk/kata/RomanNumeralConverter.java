@@ -41,12 +41,16 @@ public class RomanNumeralConverter {
 	);
 	
 	public String convert(int val) {
+		StringBuilder result = new StringBuilder();
+		
 		for (RomanSymbol symbol : symbols) {
 			if (val >= symbol.value) {
 				int numTimes = val / symbol.value;
-				return Strings.repeat(symbol.symbol, numTimes);
+				result.append(Strings.repeat(symbol.symbol, numTimes));
+				val -= numTimes * symbol.value;
 			}
 		}
-		return null;
+		
+		return result.toString();
 	}
 }
