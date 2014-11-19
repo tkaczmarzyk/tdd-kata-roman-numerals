@@ -46,4 +46,24 @@ public class RomanNumeralsTest {
 	public void convertsToSingleX() {
 		assertEquals("X", converter.convert(10));
 	}
+	
+	@Test
+	public void convertsToSingleL() {
+		assertEquals("L", converter.convert(50));
+	}
+	
+	@Test
+	public void convertsToSingleC() {
+		assertEquals("C", converter.convert(100));
+	}
+	
+	@Test
+	public void convertsToSingleD() {
+		assertEquals("D", converter.convert(500));
+	}
+	
+	@Test
+	public void convertsToSingleM() {
+		assertEquals("M", converter.convert(1000));
+	}
 }

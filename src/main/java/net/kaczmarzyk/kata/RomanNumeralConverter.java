@@ -29,6 +29,10 @@ import java.util.Map;
 public class RomanNumeralConverter {
 
 	private Map<Integer, String> symbols = new HashMap<Integer, String>() {{
+		put(1000, "M");
+		put(500, "D");
+		put(100, "C");
+		put(50, "L");
 		put(10, "X");
 		put(5, "V");
 		put(1, "I");
