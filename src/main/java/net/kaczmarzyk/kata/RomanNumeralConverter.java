@@ -23,15 +23,18 @@
  */
 package net.kaczmarzyk.kata;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RomanNumeralConverter {
 
+	private Map<Integer, String> symbols = new HashMap<Integer, String>() {{
+		put(10, "X");
+		put(5, "V");
+		put(1, "I");
+	}};
+	
 	public String convert(int val) {
-		if (val == 10) {
-			return "X";
-		}
-		if (val == 5) {
-			return "V";
-		}
-		return "I";
+		return symbols.get(val);
 	}
 }
