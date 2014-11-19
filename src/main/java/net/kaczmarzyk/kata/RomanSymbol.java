@@ -23,30 +23,13 @@
  */
 package net.kaczmarzyk.kata;
 
-import java.util.Arrays;
-import java.util.List;
+public class RomanSymbol {
 
-import com.google.common.base.Strings;
-
-public class RomanNumeralConverter {
-
-	private List<RomanSymbol> symbols = Arrays.asList(
-		new RomanSymbol(1000, "M"),
-		new RomanSymbol(500, "D"),
-		new RomanSymbol(100, "C"),
-		new RomanSymbol(50, "L"),
-		new RomanSymbol(10, "X"),
-		new RomanSymbol(5, "V"),
-		new RomanSymbol(1, "I")
-	);
+	int value;
+	String symbol;
 	
-	public String convert(int val) {
-		for (RomanSymbol symbol : symbols) {
-			if (val >= symbol.value) {
-				int numTimes = val / symbol.value;
-				return Strings.repeat(symbol.symbol, numTimes);
-			}
-		}
-		return null;
+	RomanSymbol(int value, String symbol) {
+		this.value = value;
+		this.symbol = symbol;
 	}
 }
