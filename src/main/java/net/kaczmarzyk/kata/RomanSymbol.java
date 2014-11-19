@@ -23,13 +23,25 @@
  */
 package net.kaczmarzyk.kata;
 
+import com.google.common.base.Strings;
+
 public class RomanSymbol {
 
 	int value;
-	String symbol;
+	private String symbol;
 	
 	RomanSymbol(int value, String symbol) {
 		this.value = value;
 		this.symbol = symbol;
+	}
+
+	public String maxRepetitionLessOrEqualTo(int val) {
+		int numTimes = val / value;
+		return Strings.repeat(symbol, numTimes);
+	}
+
+	public int maxRepetitionValueLessOrEqualTo(int val) {
+		int numTimes = val / value;
+		return numTimes * value;
 	}
 }

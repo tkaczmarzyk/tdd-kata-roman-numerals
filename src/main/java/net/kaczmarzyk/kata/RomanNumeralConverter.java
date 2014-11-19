@@ -26,8 +26,6 @@ package net.kaczmarzyk.kata;
 import java.util.Arrays;
 import java.util.List;
 
-import com.google.common.base.Strings;
-
 public class RomanNumeralConverter {
 
 	private List<RomanSymbol> symbols = Arrays.asList(
@@ -45,9 +43,8 @@ public class RomanNumeralConverter {
 		
 		for (RomanSymbol symbol : symbols) {
 			if (val >= symbol.value) {
-				int numTimes = val / symbol.value;
-				result.append(Strings.repeat(symbol.symbol, numTimes));
-				val -= numTimes * symbol.value;
+				result.append(symbol.maxRepetitionLessOrEqualTo(val));
+				val -= symbol.maxRepetitionValueLessOrEqualTo(val);
 			}
 		}
 		
