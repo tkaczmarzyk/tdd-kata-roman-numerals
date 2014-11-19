@@ -79,4 +79,14 @@ public class RomanNumeralsTest {
 		assertEquals("XV", converter.convert(15));
 		assertEquals("CLX", converter.convert(160));
 	}
+	
+	@Test
+	public void usesSubtractiveNotation() {
+	   assertEquals("IV", converter.convert(4));
+	   assertEquals("IX", converter.convert(9));
+	   assertEquals("XL", converter.convert(40));
+	   assertEquals("XC", converter.convert(90));
+	   assertEquals("CD", converter.convert(400));
+	   assertEquals("CM", converter.convert(900));
+	}
 }
