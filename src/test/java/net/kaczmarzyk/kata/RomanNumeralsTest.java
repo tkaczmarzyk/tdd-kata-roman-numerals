@@ -66,4 +66,11 @@ public class RomanNumeralsTest {
 	public void convertsToSingleM() {
 		assertEquals("M", converter.convert(1000));
 	}
+
+	@Test
+	public void repeatsASymbol() {
+		assertEquals("II", converter.convert(2));
+		assertEquals("XX", converter.convert(20));
+		assertEquals("III", converter.convert(3));
+	}
 }
