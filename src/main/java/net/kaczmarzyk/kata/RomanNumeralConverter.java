@@ -26,6 +26,12 @@ package net.kaczmarzyk.kata;
 public class RomanNumeralConverter {
 
 	public String convert(int val) {
+		if (val == 10) {
+			return "X";
+		}
+		if (val == 5) {
+			return "V";
+		}
 		return "I";
 	}
 }
