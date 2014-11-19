@@ -73,4 +73,10 @@ public class RomanNumeralsTest {
 		assertEquals("XX", converter.convert(20));
 		assertEquals("III", converter.convert(3));
 	}
+	
+	@Test
+	public void combinesMultipleSymbols() {
+		assertEquals("XV", converter.convert(15));
+		assertEquals("CLX", converter.convert(160));
+	}
 }
