@@ -89,4 +89,9 @@ public class RomanNumeralsTest {
 	   assertEquals("CD", converter.convert(400));
 	   assertEquals("CM", converter.convert(900));
 	}
+	
+	@Test
+	public void convertsALargeNumber() {
+		assertEquals("MMMMCMXCIX", converter.convert(4999));
+	}
 }
