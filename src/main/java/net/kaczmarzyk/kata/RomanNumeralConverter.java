@@ -23,12 +23,14 @@
  */
 package net.kaczmarzyk.kata;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+
+import com.google.common.base.Strings;
 
 public class RomanNumeralConverter {
 
-	private Map<Integer, String> symbols = new HashMap<Integer, String>() {{
+	private Map<Integer, String> symbols = new LinkedHashMap<Integer, String>() {{
 		put(1000, "M");
 		put(500, "D");
 		put(100, "C");
@@ -39,6 +41,12 @@ public class RomanNumeralConverter {
 	}};
 	
 	public String convert(int val) {
-		return symbols.get(val);
+		for (Map.Entry<Integer, String> symbol : symbols.entrySet()) {
+			if (val >= symbol.getKey()) {
+				int numTimes = val / symbol.getKey();
+				return Strings.repeat(symbol.getValue(), numTimes);
+			}
+		}
+		return null;
 	}
 }
