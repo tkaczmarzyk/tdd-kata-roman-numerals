@@ -36,4 +36,14 @@ public class RomanNumeralsTest {
 	public void convertsToSingleI() {
 		assertEquals("I", converter.convert(1));
 	}
+	
+	@Test
+	public void convertsToSingleV() {
+		assertEquals("V", converter.convert(5));
+	}
+	
+	@Test
+	public void convertsToSingleX() {
+		assertEquals("X", converter.convert(10));
+	}
 }
